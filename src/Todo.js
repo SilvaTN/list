@@ -1,4 +1,5 @@
 import React from 'react'
+import { Checkbox, InputLabel, Grid } from "@material-ui/core";
 
 export default function Todo({ todo, toggleTodo }) {
     function handleTodoClick() {
@@ -6,9 +7,13 @@ export default function Todo({ todo, toggleTodo }) {
     }
     
     return (
-        <div>
+        <div style={{  
+            whiteSpace: "nowrap",
+            overflow: "auto",
+            width: "100%",
+            fontSize: "20px"}}>
             <label>
-                <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
+                <Checkbox checked={todo.complete} onChange={handleTodoClick} />
                 {todo.name}
             </label>
         </div>
